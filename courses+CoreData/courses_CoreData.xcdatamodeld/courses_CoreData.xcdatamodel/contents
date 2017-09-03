@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F27" minimumToolsVersion="Automatic">
+    <entity name="Course" representedClassName="Course" parentEntity="Object" syncable="YES">
+        <attribute name="courseName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="lecturer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lecturer" inverseName="course" inverseEntity="Lecturer" syncable="YES"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="User" inverseName="courses" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="Lecturer" representedClassName="Lecturer" parentEntity="Object" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="course" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Course" inverseName="lecturer" inverseEntity="Course" syncable="YES"/>
+    </entity>
+    <entity name="Object" representedClassName="Object" syncable="YES"/>
+    <entity name="User" representedClassName="User" parentEntity="Object" syncable="YES">
+        <attribute name="age" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="firsName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="courses" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Course" inverseName="users" inverseEntity="Course" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="User" positionX="-42912" positionY="-11833" width="128" height="133"/>
+        <element name="Course" positionX="-42570" positionY="-11788" width="128" height="88"/>
+        <element name="Lecturer" positionX="-42210" positionY="-11835" width="128" height="118"/>
+        <element name="Object" positionX="-42579" positionY="-12103" width="128" height="43"/>
+    </elements>
 </model>

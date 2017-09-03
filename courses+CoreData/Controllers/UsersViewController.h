@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  UsersViewController.h
 //  courses+CoreData
 //
 //  Created by Admin on 31.08.17.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface UsersViewController : UITableViewController
 
 @end
-
