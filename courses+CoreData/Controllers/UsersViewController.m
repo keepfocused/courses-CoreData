@@ -7,6 +7,8 @@
 //
 
 #import "UsersViewController.h"
+#import "User.h"
+#import <CoreData/CoreData.h>
 
 @interface UsersViewController ()
 
@@ -16,8 +18,12 @@
 
 @implementation UsersViewController
 
+@synthesize fetchedResultsController = _fetchedResultsController;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.navigationItem.title = @"Users";
 
     self.users = [NSMutableArray array];
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
@@ -32,7 +38,56 @@
 - (void)addTapped:(id)sender {
 
     NSLog(@"Add button used");
+
+    NSMutableArray* mutArray = [[DataManager sharedManager] allObjects];
+
+    NSLog(@"all objects = %@", mutArray);
+
+    //User* user = [[DataManager sharedManager] createUser];
+
+    [[DataManager sharedManager] saveContext];
     
+    
+}
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+
+    NSFetchRequest* fetchRequest = [[NSFetchRequest alloc] init];
+
+    NSEntityDescription* description =
+    [NSEntityDescription entityForName:@"User"
+                inManagedObjectContext:self.managedObjectContext];
+
+    [fetchRequest setEntity:description];
+
+    NSSortDescriptor* nameDescription =
+    [[NSSortDescriptor alloc] initWithKey:@"firstName" ascending:YES];
+
+    [fetchRequest setSortDescriptors:@[nameDescription]];
+
+    // Edit the section name key path and cache name if appropriate.
+    // nil for section name key path means "no sections".
+    NSFetchedResultsController *aFetchedResultsController =
+    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                        managedObjectContext:self.managedObjectContext
+                                          sectionNameKeyPath:nil
+                                                   cacheName:@"Master"];
+    aFetchedResultsController.delegate = self;
+    self.fetchedResultsController = aFetchedResultsController;
+
+    NSError *error = nil;
+    if (![self.fetchedResultsController performFetch:&error]) {
+        // Replace this implementation with code to handle the error appropriately.
+        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+
+    return _fetchedResultsController;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,7 +95,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - UITableViewDataSource
+
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+
+    User *user = [self.fetchedResultsController objectAtIndexPath:indexPath];
+
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", user.firsName,user.lastName];
+    cell.detailTextLabel.text = user.lastName;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;

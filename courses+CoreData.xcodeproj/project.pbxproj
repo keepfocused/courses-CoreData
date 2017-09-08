@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		843A31351F60E80000098883 /* CoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843A31341F60E80000098883 /* CoreDataViewController.m */; };
 		844D52801F57F20600D6D291 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D527F1F57F20600D6D291 /* main.m */; };
 		844D52831F57F20700D6D291 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D52821F57F20700D6D291 /* AppDelegate.m */; };
 		844D52891F57F20700D6D291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844D52871F57F20700D6D291 /* Main.storyboard */; };
@@ -22,9 +23,12 @@
 		844D53121F5850B800D6D291 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D53081F5850B800D6D291 /* User.m */; };
 		844D53131F5850B800D6D291 /* Lecturer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D530A1F5850B800D6D291 /* Lecturer+CoreDataProperties.m */; };
 		844D53141F5850B800D6D291 /* Lecturer.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D530C1F5850B800D6D291 /* Lecturer.m */; };
+		847731231F60AC92000D8BF5 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 847731221F60AC92000D8BF5 /* DataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		843A31331F60E80000098883 /* CoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataViewController.h; path = Controllers/CoreDataViewController.h; sourceTree = "<group>"; };
+		843A31341F60E80000098883 /* CoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataViewController.m; path = Controllers/CoreDataViewController.m; sourceTree = "<group>"; };
 		844D527B1F57F20600D6D291 /* courses+CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "courses+CoreData.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		844D527F1F57F20600D6D291 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		844D52811F57F20700D6D291 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -52,6 +56,8 @@
 		844D530A1F5850B800D6D291 /* Lecturer+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Lecturer+CoreDataProperties.m"; sourceTree = "<group>"; };
 		844D530B1F5850B800D6D291 /* Lecturer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lecturer.h; sourceTree = "<group>"; };
 		844D530C1F5850B800D6D291 /* Lecturer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lecturer.m; sourceTree = "<group>"; };
+		847731211F60AC92000D8BF5 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = Controllers/DataManager.h; sourceTree = "<group>"; };
+		847731221F60AC92000D8BF5 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = Controllers/DataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +115,12 @@
 		844D529B1F57FB3B00D6D291 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				843A31331F60E80000098883 /* CoreDataViewController.h */,
+				843A31341F60E80000098883 /* CoreDataViewController.m */,
 				844D52981F57FB2C00D6D291 /* UsersViewController.h */,
 				844D52991F57FB2C00D6D291 /* UsersViewController.m */,
+				847731211F60AC92000D8BF5 /* DataManager.h */,
+				847731221F60AC92000D8BF5 /* DataManager.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -214,12 +224,14 @@
 				844D53101F5850B800D6D291 /* Object.m in Sources */,
 				844D53111F5850B800D6D291 /* User+CoreDataProperties.m in Sources */,
 				844D52831F57F20700D6D291 /* AppDelegate.m in Sources */,
+				847731231F60AC92000D8BF5 /* DataManager.m in Sources */,
 				844D52801F57F20600D6D291 /* main.m in Sources */,
 				844D53131F5850B800D6D291 /* Lecturer+CoreDataProperties.m in Sources */,
 				844D528C1F57F20700D6D291 /* courses_CoreData.xcdatamodeld in Sources */,
 				844D530E1F5850B800D6D291 /* Course.m in Sources */,
 				844D530D1F5850B800D6D291 /* Course+CoreDataProperties.m in Sources */,
 				844D53141F5850B800D6D291 /* Lecturer.m in Sources */,
+				843A31351F60E80000098883 /* CoreDataViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +378,7 @@
 				844D52971F57F20700D6D291 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
