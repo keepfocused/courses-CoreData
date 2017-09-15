@@ -43,7 +43,7 @@
 
     NSLog(@"all objects = %@", mutArray);
 
-    //User* user = [[DataManager sharedManager] createUser];
+    User* user = [[DataManager sharedManager] createUser];
 
     [[DataManager sharedManager] saveContext];
     
@@ -101,19 +101,19 @@
 
     User *user = [self.fetchedResultsController objectAtIndexPath:indexPath];
 
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", user.firsName,user.lastName];
-    cell.detailTextLabel.text = user.lastName;
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", user.firstName,user.lastName];
+   //cell.detailTextLabel.text = user.lastName;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 }
 
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.users count];
-}
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    return [self.users count];
+//}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

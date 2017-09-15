@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		835CB66A1F686AB500FEAD3E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 835CB6691F686AB500FEAD3E /* User.m */; };
 		843A31351F60E80000098883 /* CoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843A31341F60E80000098883 /* CoreDataViewController.m */; };
 		844D52801F57F20600D6D291 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D527F1F57F20600D6D291 /* main.m */; };
 		844D52831F57F20700D6D291 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D52821F57F20700D6D291 /* AppDelegate.m */; };
@@ -15,18 +16,12 @@
 		844D528E1F57F20700D6D291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844D528D1F57F20700D6D291 /* Assets.xcassets */; };
 		844D52911F57F20700D6D291 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844D528F1F57F20700D6D291 /* LaunchScreen.storyboard */; };
 		844D529A1F57FB2C00D6D291 /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D52991F57FB2C00D6D291 /* UsersViewController.m */; };
-		844D530D1F5850B800D6D291 /* Course+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D52FE1F5850B800D6D291 /* Course+CoreDataProperties.m */; };
-		844D530E1F5850B800D6D291 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D53001F5850B800D6D291 /* Course.m */; };
-		844D530F1F5850B800D6D291 /* Object+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D53021F5850B800D6D291 /* Object+CoreDataProperties.m */; };
-		844D53101F5850B800D6D291 /* Object.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D53041F5850B800D6D291 /* Object.m */; };
-		844D53111F5850B800D6D291 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D53061F5850B800D6D291 /* User+CoreDataProperties.m */; };
-		844D53121F5850B800D6D291 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D53081F5850B800D6D291 /* User.m */; };
-		844D53131F5850B800D6D291 /* Lecturer+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D530A1F5850B800D6D291 /* Lecturer+CoreDataProperties.m */; };
-		844D53141F5850B800D6D291 /* Lecturer.m in Sources */ = {isa = PBXBuildFile; fileRef = 844D530C1F5850B800D6D291 /* Lecturer.m */; };
 		847731231F60AC92000D8BF5 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 847731221F60AC92000D8BF5 /* DataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		835CB6681F686AB500FEAD3E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Model/User.h; sourceTree = "<group>"; };
+		835CB6691F686AB500FEAD3E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Model/User.m; sourceTree = "<group>"; };
 		843A31331F60E80000098883 /* CoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataViewController.h; path = Controllers/CoreDataViewController.h; sourceTree = "<group>"; };
 		843A31341F60E80000098883 /* CoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataViewController.m; path = Controllers/CoreDataViewController.m; sourceTree = "<group>"; };
 		844D527B1F57F20600D6D291 /* courses+CoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "courses+CoreData.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,22 +35,6 @@
 		844D52921F57F20700D6D291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		844D52981F57FB2C00D6D291 /* UsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsersViewController.h; path = Controllers/UsersViewController.h; sourceTree = "<group>"; };
 		844D52991F57FB2C00D6D291 /* UsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsersViewController.m; path = Controllers/UsersViewController.m; sourceTree = "<group>"; };
-		844D52FD1F5850B800D6D291 /* Course+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Course+CoreDataProperties.h"; sourceTree = "<group>"; };
-		844D52FE1F5850B800D6D291 /* Course+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Course+CoreDataProperties.m"; sourceTree = "<group>"; };
-		844D52FF1F5850B800D6D291 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
-		844D53001F5850B800D6D291 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
-		844D53011F5850B800D6D291 /* Object+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Object+CoreDataProperties.h"; sourceTree = "<group>"; };
-		844D53021F5850B800D6D291 /* Object+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Object+CoreDataProperties.m"; sourceTree = "<group>"; };
-		844D53031F5850B800D6D291 /* Object.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object.h; sourceTree = "<group>"; };
-		844D53041F5850B800D6D291 /* Object.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Object.m; sourceTree = "<group>"; };
-		844D53051F5850B800D6D291 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
-		844D53061F5850B800D6D291 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
-		844D53071F5850B800D6D291 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		844D53081F5850B800D6D291 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		844D53091F5850B800D6D291 /* Lecturer+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Lecturer+CoreDataProperties.h"; sourceTree = "<group>"; };
-		844D530A1F5850B800D6D291 /* Lecturer+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Lecturer+CoreDataProperties.m"; sourceTree = "<group>"; };
-		844D530B1F5850B800D6D291 /* Lecturer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lecturer.h; sourceTree = "<group>"; };
-		844D530C1F5850B800D6D291 /* Lecturer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lecturer.m; sourceTree = "<group>"; };
 		847731211F60AC92000D8BF5 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = Controllers/DataManager.h; sourceTree = "<group>"; };
 		847731221F60AC92000D8BF5 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = Controllers/DataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,22 +107,8 @@
 		844D529C1F583F2300D6D291 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				844D52FD1F5850B800D6D291 /* Course+CoreDataProperties.h */,
-				844D52FE1F5850B800D6D291 /* Course+CoreDataProperties.m */,
-				844D52FF1F5850B800D6D291 /* Course.h */,
-				844D53001F5850B800D6D291 /* Course.m */,
-				844D53011F5850B800D6D291 /* Object+CoreDataProperties.h */,
-				844D53021F5850B800D6D291 /* Object+CoreDataProperties.m */,
-				844D53031F5850B800D6D291 /* Object.h */,
-				844D53041F5850B800D6D291 /* Object.m */,
-				844D53051F5850B800D6D291 /* User+CoreDataProperties.h */,
-				844D53061F5850B800D6D291 /* User+CoreDataProperties.m */,
-				844D53071F5850B800D6D291 /* User.h */,
-				844D53081F5850B800D6D291 /* User.m */,
-				844D53091F5850B800D6D291 /* Lecturer+CoreDataProperties.h */,
-				844D530A1F5850B800D6D291 /* Lecturer+CoreDataProperties.m */,
-				844D530B1F5850B800D6D291 /* Lecturer.h */,
-				844D530C1F5850B800D6D291 /* Lecturer.m */,
+				835CB6681F686AB500FEAD3E /* User.h */,
+				835CB6691F686AB500FEAD3E /* User.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -174,7 +139,7 @@
 		844D52731F57F20600D6D291 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Galiev Danil";
 				TargetAttributes = {
 					844D527A1F57F20600D6D291 = {
@@ -218,19 +183,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				844D53121F5850B800D6D291 /* User.m in Sources */,
+				835CB66A1F686AB500FEAD3E /* User.m in Sources */,
 				844D529A1F57FB2C00D6D291 /* UsersViewController.m in Sources */,
-				844D530F1F5850B800D6D291 /* Object+CoreDataProperties.m in Sources */,
-				844D53101F5850B800D6D291 /* Object.m in Sources */,
-				844D53111F5850B800D6D291 /* User+CoreDataProperties.m in Sources */,
 				844D52831F57F20700D6D291 /* AppDelegate.m in Sources */,
 				847731231F60AC92000D8BF5 /* DataManager.m in Sources */,
 				844D52801F57F20600D6D291 /* main.m in Sources */,
-				844D53131F5850B800D6D291 /* Lecturer+CoreDataProperties.m in Sources */,
 				844D528C1F57F20700D6D291 /* courses_CoreData.xcdatamodeld in Sources */,
-				844D530E1F5850B800D6D291 /* Course.m in Sources */,
-				844D530D1F5850B800D6D291 /* Course+CoreDataProperties.m in Sources */,
-				844D53141F5850B800D6D291 /* Lecturer.m in Sources */,
 				843A31351F60E80000098883 /* CoreDataViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,8 +228,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -313,8 +273,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
