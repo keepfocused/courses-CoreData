@@ -32,8 +32,8 @@
 {
     User *user = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.managedObjectContext];
 
-    user.firstName = @"firstName";
-    user.lastName = @"lastName";
+    //user.firstName = @"firstName";
+    //user.lastName = @"lastName";
 
 
 

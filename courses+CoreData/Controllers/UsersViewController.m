@@ -42,10 +42,12 @@
     NSMutableArray* mutArray = [[DataManager sharedManager] allObjects];
 
     NSLog(@"all objects = %@", mutArray);
+    
+    [self performSegueWithIdentifier:@"UserDetails" sender:nil];
 
-    User* user = [[DataManager sharedManager] createUser];
+    //User* user = [[DataManager sharedManager] createUser];
 
-    [[DataManager sharedManager] saveContext];
+    //[[DataManager sharedManager] saveContext];
     
     
 }
@@ -142,6 +144,12 @@
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
