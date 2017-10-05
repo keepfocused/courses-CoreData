@@ -7,12 +7,14 @@
 //
 
 #import "UsersViewController.h"
+#import "UserDetailViewController.h"
 #import "User.h"
 #import <CoreData/CoreData.h>
 
 @interface UsersViewController ()
 
 @property (strong, nonatomic) NSMutableArray* users;
+@property (assign, nonatomic) NSInteger selectedUser;
 
 @end
 
@@ -39,9 +41,9 @@
 
     NSLog(@"Add button used");
 
-    NSMutableArray* mutArray = [[DataManager sharedManager] allObjects];
+    //NSMutableArray* mutArray = [[DataManager sharedManager] allObjects];
 
-    NSLog(@"all objects = %@", mutArray);
+    //NSLog(@"all objects = %@", mutArray);
     
     [self performSegueWithIdentifier:@"UserDetails" sender:nil];
 
@@ -150,6 +152,32 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    self.selectedUser = indexPath.row;
+    
+     [self performSegueWithIdentifier:@"UserDetails" sender:nil];
+    
+    //UserDetailViewController* vc = [[UserDetailViewController alloc] initWithNibName:@"UserDetailViewController" bundle:nil];
+    
+   // vc.currentUser = indexPath.row;
+
+    
+    //[self.navigationController pushViewController:vc animated:YES];
+    
+    
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"UserDetails"]) {
+        
+        UserDetailViewController *controller = (UserDetailViewController *)segue.destinationViewController;
+
+        controller.currentUser = self.selectedUser;
+        
+        self.selectedUser = NULL;
+        
+    }
 }
 
 

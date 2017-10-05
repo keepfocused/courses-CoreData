@@ -12,6 +12,7 @@
 
 @interface UserDetailViewController ()
 @property (strong, nonatomic) NSIndexPath* tempIndexPath;
+@property (strong, nonatomic) User* user;
 
 
 @end
@@ -20,6 +21,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@"self row = %ld", self.currentUser);
+    
+    if (self.currentUser != nil) {
+        
+        self.user = [[DataManager sharedManager] getUserBySelectedLine:self.currentUser];
+        
+        
+    }
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -126,6 +136,14 @@
         
         detailCell.userImageView.image = [UIImage imageNamed:@"photo.jpg"];
         
+        if (self.user) {
+            
+            detailCell.firstNameTextField.text = self.user.firstName;
+            detailCell.lastNameTextField.text = self.user.lastName;
+            detailCell.cityTextField.text = self.user.city;
+            detailCell.phoneTextField.text = self.user.phoneNumber;
+        }
+        
         return detailCell;
     }
     /*
@@ -149,6 +167,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
 }
 
 

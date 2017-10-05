@@ -24,6 +24,8 @@
 
 - (User*) createUser;
 
+- (User*) getUserBySelectedLine:(NSInteger)lineNumber;
+
 - (NSArray*) allObjects;
 
 @end

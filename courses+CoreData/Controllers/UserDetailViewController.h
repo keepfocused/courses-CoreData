@@ -10,6 +10,8 @@
 
 @interface UserDetailViewController : CoreDataViewController
 
+@property (assign, nonatomic) NSInteger currentUser;
+
 
 
 @end

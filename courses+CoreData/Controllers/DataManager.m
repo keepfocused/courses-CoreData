@@ -75,6 +75,26 @@
     return resultArray;
 }
 
+- (User*) getUserBySelectedLine:(NSInteger)lineNumber
+{
+    NSFetchRequest* request = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription* description = [NSEntityDescription entityForName:@"User"
+                                                   inManagedObjectContext:self.managedObjectContext];
+    
+    [request setEntity:description];
+    NSError* requestError = nil;
+    
+    NSArray* resultArray = [self.managedObjectContext executeFetchRequest:request error:&requestError];
+    if (requestError) {
+        NSLog(@"%@", [requestError localizedDescription]);
+    }
+    
+    User* resultUser = [resultArray objectAtIndex:lineNumber];
+    
+    return resultUser;
+}
+
 #pragma mark - Core Data stack
 
 // Returns the managed object context for the application.
