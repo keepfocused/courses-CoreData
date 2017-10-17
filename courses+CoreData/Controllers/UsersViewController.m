@@ -14,7 +14,7 @@
 @interface UsersViewController () <UITabBarDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) NSMutableArray* users;
-@property (assign, nonatomic) NSInteger selectedUser;
+@property (strong, nonatomic) User* selectedUser;
 
 @end
 
@@ -162,7 +162,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    self.selectedUser = indexPath.row;
+    self.selectedUser = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
      [self performSegueWithIdentifier:@"UserDetails" sender:nil];
     

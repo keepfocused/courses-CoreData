@@ -7,10 +7,11 @@
 //
 
 #import "CoreDataViewController.h"
+#import "User.h"
 
 @interface UserDetailViewController : CoreDataViewController
 
-@property (assign, nonatomic) NSInteger currentUser;
+@property (strong, nonatomic) User* currentUser;
 
 
 
