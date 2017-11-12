@@ -11,10 +11,10 @@
 #import "User.h"
 #import <CoreData/CoreData.h>
 
-@interface UsersViewController ()
+@interface UsersViewController () <UITabBarDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) NSMutableArray* users;
-@property (assign, nonatomic) NSInteger selectedUser;
+@property (strong, nonatomic) User* selectedUser;
 
 @end
 
@@ -142,7 +142,16 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        User *user = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        
+        [self.managedObjectContext deleteObject:user];
+        [self.managedObjectContext save:nil];
+        //[tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    
+    
+        
+        NSLog(@"Delete used");
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
@@ -153,7 +162,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    self.selectedUser = indexPath.row;
+    self.selectedUser = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
      [self performSegueWithIdentifier:@"UserDetails" sender:nil];
     
@@ -167,6 +176,8 @@
     
 }
 
+
+
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"UserDetails"]) {
@@ -179,6 +190,8 @@
         
     }
 }
+
+
 
 
 /*

@@ -15,6 +15,7 @@
 @property (strong, nonatomic) User* user;
 
 
+
 @end
 
 @implementation UserDetailViewController
@@ -22,14 +23,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSLog(@"self row = %ld", self.currentUser);
     
-    if (self.currentUser != nil) {
+    NSLog(@"current user = %@", self.currentUser);
+    
+
+    
+    //if (self.currentUser != nil) {
         
-        self.user = [[DataManager sharedManager] getUserBySelectedLine:self.currentUser];
+       // self.user = [[DataManager sharedManager] getUserBySelectedLine:self.currentUser];
         
         
-    }
+  //  }
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -39,31 +43,42 @@
 }
 - (IBAction)SaveAndBack:(UIButton *)sender {
     
-    //if (ПЕРЕДАННЫЙ ОБЪЕКТ == nil ) {
+    if (self.currentUser == nil ) {
     
-    User* user = [[DataManager sharedManager] createUser];
+        User* user = [[DataManager sharedManager] createUser];
+        
+        UserDetailCell* tempCell = [self.tableView cellForRowAtIndexPath:self.tempIndexPath];
+        
+        user.firstName = tempCell.firstNameTextField.text;
+        user.lastName = tempCell.lastNameTextField.text;
     
-    UserDetailCell* tempCell = [self.tableView cellForRowAtIndexPath:self.tempIndexPath];
+        [[DataManager sharedManager] saveContext];
     
+        NSLog(@"Save button pressed");
     
-    
-    
-    user.firstName = tempCell.firstNameTextField.text;
-    user.lastName = tempCell.lastNameTextField.text;
-    
-    [[DataManager sharedManager] saveContext];
-    
-    
-    
-    
-    
-    
-    
-    
-    NSLog(@"Save button pressed");
-    
-    UINavigationController *navigationController = self.navigationController;
-    [navigationController popViewControllerAnimated:YES];
+        UINavigationController *navigationController = self.navigationController;
+        [navigationController popViewControllerAnimated:YES];
+        
+    }
+    if (self.currentUser) {
+        
+        User* user = self.currentUser;
+        
+        UserDetailCell* tempCell = [self.tableView cellForRowAtIndexPath:self.tempIndexPath];
+        user.firstName = tempCell.firstNameTextField.text;
+        user.lastName = tempCell.lastNameTextField.text;
+        
+        [[DataManager sharedManager] saveContext];
+        
+        NSLog(@"Save button pressed");
+        
+        UINavigationController *navigationController = self.navigationController;
+        [navigationController popViewControllerAnimated:YES];
+        
+        
+        
+        
+    }
     
 
 }
@@ -136,12 +151,12 @@
         
         detailCell.userImageView.image = [UIImage imageNamed:@"photo.jpg"];
         
-        if (self.user) {
+        if (self.currentUser) {
             
-            detailCell.firstNameTextField.text = self.user.firstName;
-            detailCell.lastNameTextField.text = self.user.lastName;
-            detailCell.cityTextField.text = self.user.city;
-            detailCell.phoneTextField.text = self.user.phoneNumber;
+            detailCell.firstNameTextField.text = self.currentUser.firstName;
+            detailCell.lastNameTextField.text = self.currentUser.lastName;
+            detailCell.cityTextField.text = self.currentUser.city;
+            detailCell.phoneTextField.text = self.currentUser.phoneNumber;
         }
         
         return detailCell;
